@@ -29,7 +29,7 @@ public class LearningSpringApplication {
 
         @GetMapping
         public Iterable<Room> getRooms() {
-            return this.roomRepository.findAll();
+            return roomRepository.findAll();
         }
     }
 
@@ -41,7 +41,7 @@ public class LearningSpringApplication {
 
         @GetMapping
         public Iterable<Guest> getGuests() {
-            return this.guestRepository.findAll();
+            return guestRepository.findAll();
         }
     }
 
@@ -53,7 +53,7 @@ public class LearningSpringApplication {
 
         @GetMapping
         public Iterable<Reservation> getReservations() {
-            return this.reservationRepository.findAll();
+            return reservationRepository.findAll();
         }
     }
 }

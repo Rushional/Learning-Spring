@@ -1,7 +1,7 @@
 package com.rushional.sprung.learningspring.data.entity;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 
 @Entity
 @Table(name="RESERVATION")
@@ -14,15 +14,14 @@ public class Reservation {
 //    Idk why, but the course's author just used plain @Column and long. Have I made a mistake?
     @ManyToOne
     @JoinColumn(name = "ROOM_ID", nullable = false)
-    private Room room;
+    private long roomId;
 
     @ManyToOne
     @JoinColumn(name = "GUEST_ID", nullable = false)
-    private Guest guest;
+    private long guestId;
 
     @Column(name = "RES_DATE", nullable = false)
-//    I might be wrong, maybe I should have used java.sql.date
-    private Date resDate;
+    private Date reservationDate;
 
     public long getReservationId() {
         return reservationId;
@@ -32,27 +31,27 @@ public class Reservation {
         this.reservationId = reservationId;
     }
 
-    public Room getRoom() {
-        return room;
+    public long getRoomId() {
+        return roomId;
     }
 
-    public void setRoom(Room room) {
-        this.room = room;
+    public void setRoomId(long roomId) {
+        this.roomId = roomId;
     }
 
-    public Guest getGuest() {
-        return guest;
+    public long getGuestId() {
+        return guestId;
     }
 
-    public void setGuest(Guest guest) {
-        this.guest = guest;
+    public void setGuestId(long guestId) {
+        this.guestId = guestId;
     }
 
-    public Date getResDate() {
-        return resDate;
+    public Date getReservationDate() {
+        return reservationDate;
     }
 
-    public void setResDate(Date resDate) {
-        this.resDate = resDate;
+    public void setReservationDate(Date resDate) {
+        this.reservationDate = resDate;
     }
 }
