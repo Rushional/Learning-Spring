@@ -12,12 +12,17 @@ public class Reservation {
     private long reservationId;
 
 //    Idk why, but the course's author just used plain @Column and long. Have I made a mistake?
-    @ManyToOne
-    @JoinColumn(name = "ROOM_ID", nullable = false)
+//    Well, the Frank uses columns, but it's possible to make a @ManyToOne @JoinColumn connection
+//    And this way I'd have Rooms instead of roomIds.
+//    @ManyToOne
+//    @JoinColumn(name = "ROOM_ID", nullable = false)
+//    TODO: see if I can change the code to use these @JoinColumns and have Rooms instead of just ids.
+    @Column(name = "ROOM_ID", nullable = false)
     private long roomId;
 
-    @ManyToOne
-    @JoinColumn(name = "GUEST_ID", nullable = false)
+//    @ManyToOne
+//    @JoinColumn(name = "GUEST_ID", nullable = false)
+    @Column(name = "GUEST_ID", nullable = false)
     private long guestId;
 
     @Column(name = "RES_DATE", nullable = false)
